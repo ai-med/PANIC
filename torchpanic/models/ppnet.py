@@ -13,7 +13,9 @@
 # You should have received a copy of the GNU General Public License
 # along with PANIC. If not, see <https://www.gnu.org/licenses/>.
 #
-# Original License:
+#
+# Code has been adapted from https://github.com/cfchen-duke/ProtoPNet, which
+# has been released under the following license:
 # MIT License
 # 
 # Copyright (c) 2019 Chaofan Chen (cfchen-duke), Oscar Li (OscarcarLi),
