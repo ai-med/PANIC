@@ -1,0 +1,12 @@
+model_checkpoint:
+  _target_: pytorch_lightning.callbacks.ModelCheckpoint
+  monitor: ${model.validation_metric}  # name of the logged metric which determines when model is improving
+  mode: max # "max" means higher metric value is better, can be also "min"
+  save_top_k: 1 # save k best models (determined by above metric)
+  dirpath: checkpoints/
+  filename: "{epoch}-bacc"
+
+learning_rate_monitor:
+  _target_: pytorch_lightning.callbacks.LearningRateMonitor
+  logging_interval: epoch
+  log_momentum: False

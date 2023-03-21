@@ -1,0 +1,23 @@
+# @package _global_
+
+# specify here default training configuration
+defaults:
+  - _self_
+  - hydra: panic.yaml
+  - callbacks: default.yaml
+  - datamodule: adni.yaml
+  - model: panic.yaml
+  - logger: tensorboard.yaml
+  - trainer: default.yaml
+
+# path to folder with data
+data_dir: ???
+
+# fold to run this experiment for
+fold: 0
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 666
+
+# default name for the experiment, determines logging folder path
+name: "train_panic"

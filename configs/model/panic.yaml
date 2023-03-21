@@ -1,0 +1,103 @@
+_target_: torchpanic.modules.panic.PANIC
+
+lr: 0.0067
+weight_decay: 0.0001
+weight_decay_nam: 0.0001
+l_clst: 0.5  # lambda to multipli loss of intra_clst
+l_sep: ${model.l_clst}  # lambda to multipli loss of inter_clst
+l_occ: 0.5  # lambda of occurrence loss
+l_affine: 0.5
+l_nam: 0.0001  # l2 regularization of coefficients of NAM
+epochs_all: 20  # push prototypes every x epochs
+epochs_nam: 10
+epochs_warmup: 10
+enable_checkpointing: ${trainer.enable_checkpointing}
+monitor_prototypes: False
+enable_save_embeddings: False
+enable_log_prototypes: False
+validation_metric: 'val/bacc_save'
+
+net:
+  _target_: torchpanic.models.panic.PANIC
+  protonet:
+    backbone: "3dresnet"
+    in_channels: ${datamodule.metadata.num_channels}
+    out_features: ${datamodule.metadata.num_classes}
+    n_prototypes_per_class: 2  # just used for init
+    n_chans_protos: 64
+    optim_features: True
+    normed_prototypes: True
+    n_blocks: 3
+    n_basefilters: 32
+    pretrained_model: ${hydra:runtime.cwd}/outputs/pretrained_encoders/seed-666/fold-${fold}/checkpoints/best.ckpt
+  nam:
+    out_features: 3
+    hidden_units: [32, 32]
+    dropout_rate: 0.5
+    feature_dropout_rate: 0.1
+    idx_real_features: [1, 2, 3, 4, 5, 6, 7, 8, 9]  # age, edu, abeta, tau, ptau, L-Hipp, R-Hipp, L-Ento, R-Ento
+    idx_cat_features:
+      - 0
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30
+      - 31
+      - 32
+      - 33
+      - 34
+      - 35
+      - 36
+      - 37
+      - 38
+      - 39
+      - 40
+    idx_real_has_missing: [2, 3, 4]
+    idx_cat_has_missing:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+      - 13
+      - 14
+      - 15
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 22
+      - 23
+      - 24
+      - 25
+      - 26
+      - 27
+      - 28
+      - 29
+      - 30

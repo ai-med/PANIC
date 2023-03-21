@@ -1,0 +1,16 @@
+_target_: torchpanic.datamodule.adni.AdniDataModule
+
+train_data: ${data_dir}/${fold}-train.h5 # data_dir is specified in config.yaml
+valid_data: ${data_dir}/${fold}-valid.h5
+test_data: ${data_dir}/${fold}-test.h5
+modalities: ["PET", "TABULAR"]  # 2 = ModalityType.PET; 6 = ModalityType.TABULAR|PET; 7 = ModalityType.TABULAR|PET|MRI
+batch_size: 32
+num_workers: 10
+metadata:
+  num_channels: 1
+  num_classes: 3
+augmentation:
+  rotate: 30
+  translate: 0
+  scale: 0.2
+  p: 0.5

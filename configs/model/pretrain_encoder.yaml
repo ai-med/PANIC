@@ -1,0 +1,18 @@
+_target_: torchpanic.modules.standard.StandardModule
+
+lr: 0.003
+weight_decay: 0.001
+validation_metric: 'val/bacc_best'
+
+net:
+  _target_: torchpanic.models.pretrain_encoder.Encoder
+  protonet:
+    backbone: "3dresnet"
+    in_channels: ${datamodule.metadata.num_channels}
+    out_features: ${datamodule.metadata.num_classes}
+    n_prototypes_per_class: 3  # just used for init
+    n_chans_protos: 64
+    optim_features: True
+    n_blocks: 4
+    n_basefilters: 32
+    normed_prototypes: True

@@ -1,0 +1,8 @@
+# @package _global_
+
+defaults:
+  - override /datamodule: adni
+  - override /model: daft
+
+name: adni-daft
+

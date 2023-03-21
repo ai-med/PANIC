@@ -1,0 +1,21 @@
+# @package _global_
+
+# specify here default evaluation configuration
+defaults:
+  - _self_
+  - datamodule: adni.yaml
+  - model: panic.yaml
+  - logger: tensorboard.yaml
+  - trainer: default.yaml
+
+# path to folder with data
+data_dir: ???
+
+# seed for random number generators in pytorch, numpy and python.random
+seed: 666
+
+fold: 0
+
+name: "protopnet_test"
+
+ckpt_path: ???

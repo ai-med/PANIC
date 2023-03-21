@@ -1,0 +1,9 @@
+prune outputs
+prune lightning_logs
+prune logs
+
+global-exclude .ipynb_checkpoints
+global-exclude .git*
+global-exclude *.ckpt
+global-exclude *.pt[h]
+global-exclude *.py[oc]

@@ -1,0 +1,7 @@
+run:
+  dir: outputs/${name}/seed-${seed}/fold-${fold}
+job:
+  chdir: True
+sweep:
+  dir: outputs
+  subdir: ${name}/seed-${seed}/fold-${fold}
