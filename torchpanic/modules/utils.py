@@ -79,7 +79,7 @@ def load_config(ckpt_path: Union[str, Path]) -> DictConfig:
     with open(config_path) as f:
         y = yaml_load(f)
     workdir = Path().absolute()
-    idx = workdir.parts.index('panic')
+    idx = workdir.parts.index('PANIC')
     workdir = Path(*workdir.parts[:idx+1])
     if 'protonet' in y['model']['net']:
         y['model']['net']['protonet']['pretrained_model'] = \
