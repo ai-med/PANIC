@@ -1,20 +1,19 @@
 # Don't PANIC: Prototypical Additive Neural Network for Interpretable Classification of Alzheimer's Disease
 
+[![Conference Paper](https://img.shields.io/static/v1?label=DOI&message=10.1007%2f978-3-031-34048-2_7&color=3a7ebb)](https://dx.doi.org/10.1007/978-3-031-34048-2_7)
 [![Preprint](https://img.shields.io/badge/arXiv-2303.07125-b31b1b)](https://arxiv.org/abs/2303.07125)
 [![License](https://img.shields.io/badge/license-GPLv3-blue.svg)](LICENSE)
 
 This repository contains the code to the paper "Don't PANIC: Prototypical Additive Neural Network for Interpretable Classification of Alzheimer's Disease"
 
 ```
-@misc{https://doi.org/10.48550/arxiv.2303.07125,
-  doi = {10.48550/ARXIV.2303.07125},
-  url = {https://arxiv.org/abs/2303.07125},
-  author = {Wolf, Tom Nuno and Pölsterl, Sebastian and Wachinger, Christian},
-  keywords = {Machine Learning (cs.LG), Computer Vision and Pattern Recognition (cs.CV), FOS: Computer and information sciences, FOS: Computer and information sciences},
+@inproceedings{Wolf2023-IPMI,
+  doi = {10.1007/978-3-031-34048-2_7},
+  author = {Wolf, Tom Nuno and P{\"o}lsterl, Sebastian and Wachinger, Christian},
   title = {Don't PANIC: Prototypical Additive Neural Network for Interpretable Classification of Alzheimer's Disease},
-  publisher = {arXiv},
-  year = {2023},
-  copyright = {arXiv.org perpetual, non-exclusive license}
+  booktitle = {Information Processing in Medical Imaging},
+  pages = {82--94},
+  year = {2023}
 }
 ```
 
