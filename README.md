@@ -45,7 +45,7 @@ using the following hierarchical format:
 2. The second level always has the following entries:
     1. A group named `PET` with the subgroup `FDG`, which itself has the
        [dataset](https://docs.h5py.org/en/stable/high/dataset.html) named `data` as child:
-       The graymatter density map of size (113,117,113). Additionally, the subgroup `FDG` has an attribute `imageuid` with is the unique image identifier.
+       The FDG-PET volume of size (113,117,113). Additionally, the subgroup `FDG` has an attribute `imageuid` with is the unique image identifier.
     2. A group  named `tabular`, which has two datasets called `data` and `missing`, each of size 41:
        `data` contains the tabular data values, while `missing` is a missing value indicator if a tabular feature was not acquired at this visit.
     3. A scalar [attribute](https://docs.h5py.org/en/stable/high/attr.html) `RID` with the *patient* ID.
